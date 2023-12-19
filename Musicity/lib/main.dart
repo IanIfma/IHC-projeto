@@ -29,10 +29,123 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.deepPurple,
+      backgroundColor: Colors.black,
       body: ListView(
         shrinkWrap: true,
         children: [
+          //header
+          Container(
+            color: Color(0xff250054),
+            height: 100,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Image.asset(
+                      "assets/imagens/logo.png",
+                      height: 50,
+                      scale: 0.99,
+                    ),
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(30.0),
+                      child: Image.asset(
+                        "assets/imagens/logo2.png",
+                        height: 30,
+                        scale: 0.99,
+                      ),
+                    ),
+                  ],
+                ),
+                TextButton(
+                  onPressed: clique,
+                  style: TextButton.styleFrom(
+                    backgroundColor: Colors.black.withOpacity(0.6),
+                    fixedSize: const Size(140, 50),
+                    foregroundColor: Colors.black,
+                    elevation: 10.0,
+                    shadowColor: Colors.black,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                  ),
+                  child: const Text(
+                    'Radios',
+                    style: TextStyle(
+                      fontSize: 20,
+                      color: Colors.white,
+                      fontWeight: FontWeight.w800,
+                    ),
+                  ),
+                ),
+                TextButton(
+                  onPressed: clique,
+                  style: TextButton.styleFrom(
+                    backgroundColor: Colors.black.withOpacity(0.6),
+                    fixedSize: const Size(120, 50),
+                    foregroundColor: Colors.black,
+                    elevation: 10.0,
+                    shadowColor: Colors.black,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                  ),
+                  child: const Text(
+                    'Radios',
+                    style: TextStyle(
+                      fontSize: 20,
+                      color: Colors.white,
+                      fontWeight: FontWeight.w800,
+                    ),
+                  ),
+                ),
+                TextButton(
+                  onPressed: clique,
+                  style: TextButton.styleFrom(
+                    backgroundColor: Colors.black.withOpacity(0.6),
+                    fixedSize: const Size(120, 50),
+                    foregroundColor: Colors.black,
+                    elevation: 10.0,
+                    shadowColor: Colors.black,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                  ),
+                  child: const Text(
+                    'Radios',
+                    style: TextStyle(
+                      fontSize: 20,
+                      color: Colors.white,
+                      fontWeight: FontWeight.w800,
+                    ),
+                  ),
+                ),
+                TextButton(
+                  onPressed: clique,
+                  style: TextButton.styleFrom(
+                    backgroundColor: Colors.black.withOpacity(0.6),
+                    fixedSize: const Size(120, 50),
+                    foregroundColor: Colors.black,
+                    elevation: 10.0,
+                    shadowColor: Colors.black,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                  ),
+                  child: const Text(
+                    'Radios',
+                    style: TextStyle(
+                      fontSize: 20,
+                      color: Colors.white,
+                      fontWeight: FontWeight.w800,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+
           //parte inicial
           Container(
             height: 800,
@@ -50,6 +163,7 @@ class HomePage extends StatelessWidget {
                   height: 100,
                 ),
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
                       '"Musikcity: Sua trilha sonora \ncom nossa paixão produzimos \ntalentos e divulgamos estrelas."',
@@ -59,6 +173,10 @@ class HomePage extends StatelessWidget {
                         fontWeight: FontWeight.w900,
                       ),
                     ),
+                    CircleAvatar(
+                      backgroundImage: AssetImage('assets/imagens/c1.jpg'),
+                      radius: 90,
+                    ),
                   ],
                 ),
                 SizedBox(height: 100),
@@ -67,15 +185,15 @@ class HomePage extends StatelessWidget {
                   children: [
                     CircleAvatar(
                       backgroundImage: AssetImage('assets/imagens/c2.jpg'),
-                      radius: 100,
+                      radius: 90,
                     ),
                     CircleAvatar(
                       backgroundImage: AssetImage('assets/imagens/c3.jpg'),
-                      radius: 100,
+                      radius: 90,
                     ),
                     CircleAvatar(
                       backgroundImage: AssetImage('assets/imagens/c4.jpg'),
-                      radius: 100,
+                      radius: 90,
                     ),
                   ],
                 ),
@@ -86,6 +204,13 @@ class HomePage extends StatelessWidget {
           //nossa historia
           Container(
             height: 800,
+            decoration: const BoxDecoration(
+              gradient: LinearGradient(
+                colors: [Color(0xff000000), Color(0xff280d38)],
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+              ),
+            ),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -93,7 +218,7 @@ class HomePage extends StatelessWidget {
                   'UM POUCO DA NOSSA HISTORIA',
                   style: TextStyle(
                     fontSize: 40,
-                    color: Colors.purple,
+                    color: Color(0xff9f73d7),
                     fontWeight: FontWeight.w800,
                   ),
                 ),
@@ -160,13 +285,15 @@ class HomePage extends StatelessWidget {
           Container(
             height: 800,
             decoration: BoxDecoration(
+              gradient: LinearGradient(
+                colors: [Color(0xff280d38), Color(0xff12007e)],
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+              ),
               image: DecorationImage(
                 image: AssetImage('assets/imagens/bg2.jpg'),
                 fit: BoxFit.cover,
-                colorFilter: ColorFilter.mode(
-                  Colors.deepPurple.withOpacity(0.95),
-                  BlendMode.srcOver,
-                ),
+                opacity: 0.1,
               ),
             ),
             child: Column(
@@ -176,7 +303,7 @@ class HomePage extends StatelessWidget {
                   'ARTISTAS QUE PASSARAM POR NÓS',
                   style: TextStyle(
                     fontSize: 40,
-                    color: Colors.red,
+                    color: Color(0xffcd55c1),
                     fontWeight: FontWeight.w800,
                   ),
                 ),
@@ -237,7 +364,7 @@ class HomePage extends StatelessWidget {
           //nossos serviços
           Container(
             height: 800,
-            color: Colors.deepPurple,
+            color: Color(0xff12007e),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -256,9 +383,11 @@ class HomePage extends StatelessWidget {
                     TextButton(
                       onPressed: clique,
                       style: TextButton.styleFrom(
-                          backgroundColor: Colors.purpleAccent,
+                          backgroundColor: Color(0xffd8009b),
                           fixedSize: const Size(200, 180),
                           foregroundColor: Colors.black,
+                          elevation: 10.0,
+                          shadowColor: Colors.black,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10),
                           )),
@@ -289,9 +418,11 @@ class HomePage extends StatelessWidget {
                     TextButton(
                       onPressed: clique,
                       style: TextButton.styleFrom(
-                          backgroundColor: Colors.purpleAccent,
+                          backgroundColor: Color(0xffd8009b),
                           fixedSize: const Size(200, 180),
                           foregroundColor: Colors.black,
+                          elevation: 10.0,
+                          shadowColor: Colors.black,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10),
                           )),
@@ -332,9 +463,11 @@ class HomePage extends StatelessWidget {
                     TextButton(
                       onPressed: clique,
                       style: TextButton.styleFrom(
-                          backgroundColor: Colors.purpleAccent,
+                          backgroundColor: Color(0xffd8009b),
                           fixedSize: const Size(200, 180),
                           foregroundColor: Colors.black,
+                          elevation: 10.0,
+                          shadowColor: Colors.black,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10),
                           )),
@@ -370,9 +503,11 @@ class HomePage extends StatelessWidget {
                     TextButton(
                       onPressed: clique,
                       style: TextButton.styleFrom(
-                          backgroundColor: Colors.purpleAccent,
+                          backgroundColor: Color(0xffd8009b),
                           fixedSize: const Size(200, 180),
                           foregroundColor: Colors.black,
+                          elevation: 10.0,
+                          shadowColor: Colors.black,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10),
                           )),
@@ -418,9 +553,11 @@ class HomePage extends StatelessWidget {
                     TextButton(
                       onPressed: clique,
                       style: TextButton.styleFrom(
-                          backgroundColor: Colors.purpleAccent,
+                          backgroundColor: Color(0xffd8009b),
                           fixedSize: const Size(200, 180),
                           foregroundColor: Colors.black,
+                          elevation: 10.0,
+                          shadowColor: Colors.black,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10),
                           )),
@@ -451,9 +588,11 @@ class HomePage extends StatelessWidget {
                     TextButton(
                       onPressed: clique,
                       style: TextButton.styleFrom(
-                          backgroundColor: Colors.purpleAccent,
+                          backgroundColor: Color(0xffd8009b),
                           fixedSize: const Size(200, 180),
                           foregroundColor: Colors.black,
+                          elevation: 10.0,
+                          shadowColor: Colors.black,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10),
                           )),
@@ -499,14 +638,16 @@ class HomePage extends StatelessWidget {
           //radios
           Container(
             height: 800,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
+              gradient: LinearGradient(
+                colors: [Color(0xff12007e), Color(0x9f12007e)],
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+              ),
               image: DecorationImage(
                 image: AssetImage('assets/imagens/bg3.png'),
                 fit: BoxFit.cover,
-                colorFilter: ColorFilter.mode(
-                  Colors.blue.withOpacity(0.95),
-                  BlendMode.srcOver,
-                ),
+                opacity: 0.1,
               ),
             ),
             child: Column(
@@ -516,7 +657,7 @@ class HomePage extends StatelessWidget {
                   'Radios Ao-Vivo',
                   style: TextStyle(
                     fontSize: 40,
-                    color: Colors.red,
+                    color: Color(0xffd8009b),
                     fontWeight: FontWeight.w800,
                   ),
                 ),
@@ -527,12 +668,15 @@ class HomePage extends StatelessWidget {
                     TextButton(
                         onPressed: clique,
                         style: TextButton.styleFrom(
-                            backgroundColor: Colors.red,
-                            fixedSize: const Size(200, 180),
-                            foregroundColor: Colors.black,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10),
-                            )),
+                          backgroundColor: Color(0xffd8001a),
+                          fixedSize: const Size(200, 180),
+                          foregroundColor: Colors.black,
+                          elevation: 10.0,
+                          shadowColor: Colors.black,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                        ),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
@@ -555,9 +699,11 @@ class HomePage extends StatelessWidget {
                     TextButton(
                       onPressed: clique,
                       style: TextButton.styleFrom(
-                          backgroundColor: Colors.red,
+                          backgroundColor: Color(0xffd8001a),
                           fixedSize: const Size(200, 180),
                           foregroundColor: Colors.black,
+                          elevation: 10.0,
+                          shadowColor: Colors.black,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10),
                           )),
